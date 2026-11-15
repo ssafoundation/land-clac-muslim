@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 15, 23, 42;
+  --background-rgb: 248, 250, 252;
+}
+
+html {
+  font-size: 17px;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  line-height: 1.6;
+}
+
+/* সংখ্যা স্পষ্ট ও সমান চওড়া — কলামে অঙ্ক সোজা লাইনে থাকবে */
+table, input, select {
+  font-variant-numeric: tabular-nums;
+}
+td, th {
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+}
+input, select {
+  font-size: 1rem !important;
+}
+
+@media print {
+  @page { size: A4 landscape; margin: 10mm; }
+  body { background: #fff; font-size: 11px; }
+  table { page-break-inside: auto; }
+  tr { page-break-inside: avoid; }
+  .overflow-x-auto { overflow: visible !important; }
+}
